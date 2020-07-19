@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS集合运算</title>
+    <style>
+        .setcalc textarea {
+            width: 30%;
+            height: 20em;
+        }
+        .card-viewer{
+            border: 0.2rem solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-viewer" contenteditable="true"></div>
+    <script>
+        var $ = (sel, e=document) => e.querySelector(sel);
+        var $$ = (sel, e=document) => [...e.querySelectorAll(sel)];
+        $$('.card-viewer').map(e=>{
+            e.addEventListener('input', ()=>{
+                $$('p', e).map(p=>{
+                    if(p.flag_点击变色) return;
+                    if(p.flag_点击变色) return;
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

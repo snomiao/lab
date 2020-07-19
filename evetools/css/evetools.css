@@ -1,0 +1,73 @@
+/* 设定主题字体 */
+@font-face {
+    font-family: ZhangHaiShanRuiXianTi2-0-1;
+    src: url("../fonts/ZhangHaiShanRuiXianTi2-0-1.woff");
+    font-display: swap;
+}
+
+*{
+    font-family: ZhangHaiShanRuiXianTi2-0-1, Rogan-Medium, sans-serif;
+}
+  
+
+
+/* 把 footer 固定到底部 开始*/
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+
+/* 标题含工具栏 */
+body{
+    min-height: calc(100vh -  56px);
+}
+@media (min-width: 600px) {
+    body{
+        min-height: calc(100vh -  64px);
+    }
+}
+@media (orientation: landscape) and (max-width: 959px) {
+    body{
+        min-height: calc(100vh -  48px);
+    }
+}
+/* 把 footer 固定到底部 结束*/
+
+footer {
+  padding: 16px 0;
+  background-color: black;
+  color: grey;
+  margin: 1em 0 0 0;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+  line-height: 1.6em;
+}
+footer a:hover {
+  color: #bbbbbb;
+}
+
+footer .footer-nav h4 {
+  color: #979797;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.footer-nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+    
+
+footer .footer-divider{
+    margin: 1rem;
+}

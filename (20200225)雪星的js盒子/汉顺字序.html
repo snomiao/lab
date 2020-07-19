@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS集合运算</title>
+    <style>
+        .setcalc textarea {
+            width: 30%;
+            height: 20em;
+        }
+    </style>
+</head>
+
+<body>
+
+<script>
+    var 序 = () =>
+        document.querySelector('#out').value =
+        document.querySelector('#in').value
+        .replace(
+            /[\u4e00-\u9fa5]{3}(?=[\u4e00-\u9fa5])/g,
+            e => e[0] + e[2] + e[1]
+        );
+</script>
+<div>
+    <textarea rows=20 cols=80 id="in" autofocus=true oninput="序()" placeholder="在这里输入文字将会自动乱序显示在下面">汉字顺序</textarea>
+    <textarea rows=20 cols=80 id="out" readonly=true placeholder="这里将会显示乱序文字" ss-value=out></textarea>
+</div>
+</body>
+</html>

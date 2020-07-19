@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS集合运算</title>
+    <style>
+        .setcalc textarea {
+            width: 30%;
+            height: 20em;
+        }
+    </style>
+</head>
+
+<body>
+
+    A并B
+    <div class="setcalc setcalc-union">
+        <textarea id="a"></textarea>
+        <textarea id="b"></textarea>
+        <textarea id="c"></textarea>
+    </div>
+
+    A交B
+    <div class="setcalc setcalc-intersection">
+        <textarea id="a"></textarea>
+        <textarea id="b"></textarea>
+        <textarea id="c"></textarea>
+    </div>
+
+    A差B
+    <div class="setcalc setcalc-difference">
+        <textarea id="a"></textarea>
+        <textarea id="b"></textarea>
+        <textarea id="c"></textarea>
+    </div>
+
+    A中找B
+    <div class="setcalc setcalc-matches">
+        <textarea id="a"></textarea>
+        <textarea id="b"></textarea>
+        <textarea id="c"></textarea>
+    </div>
+
+
+    <script>
+        /* 并集 */
+        union = (a, b) => a.concat(b.filter(v => !a.includes(v))); /* [1,2,3,4,5] */
+        /* 交集 */
+        intersection = (a, b) => a.filter(v => b.includes(v)); /* [2] */
+        /* 差集 */
+        difference = (a, b) => a.concat(b).filter(v => !a.includes(v) || !b.includes(v)); /* [1,3,4,5] */
+        /* 减集 */
+        subtract = (a, b) => a.filter(v => !b.includes(v)); /* [2] */
+
+
+
+        [...(document.querySelectorAll(".setcalc.setcalc-union"))].map(
+            e => {
+                var a = e.querySelector("#a")
+                var b = e.querySelector("#b")
+                var c = e.querySelector("#c")
+                let onchange = () => (c.value = union(a.value.split('\n'), b.value.split('\n')).join('\n'))
+                a.addEventListener("change", onchange, false);
+                b.addEventListener("change", onchange, false);
+            });
+        [...(document.querySelectorAll(".setcalc.setcalc-intersection"))].map(
+            e => {
+                var a = e.querySelector("#a")
+                var b = e.querySelector("#b")
+                var c = e.querySelector("#c")
+                let onchange = () => (c.value = intersection(a.value.split('\n'), b.value.split('\n')).join('\n'))
+                a.addEventListener("change", onchange, false);
+                b.addEventListener("change", onchange, false);
+            });
+        [...(document.querySelectorAll(".setcalc.setcalc-difference"))].map(
+            e => {
+                var a = e.querySelector("#a")
+                var b = e.querySelector("#b")
+                var c = e.querySelector("#c")
+                let onchange = () => (c.value = difference(a.value.split('\n'), b.value.split('\n')).join('\n'))
+                a.addEventListener("change", onchange, false);
+                b.addEventListener("change", onchange, false);
+            });
+
+        [...(document.querySelectorAll(".setcalc.setcalc-matches"))].map(
+            e => {
+                var a = e.querySelector("#a")
+                var b = e.querySelector("#b")
+                var c = e.querySelector("#c")
+                let onchange = () => (c.value = matches(a.value.split('\n'), b.value.split('\n')).join('\n'))
+                a.addEventListener("change", onchange, false);
+                b.addEventListener("change", onchange, false);
+            });
+    </script>
+
+</body>
+
+</html>
